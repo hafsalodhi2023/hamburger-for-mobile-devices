@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Dosis", sans-serif;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(148, 48, 48, 0.2),
+      rgba(167, 67, 67, 0.4)
+    ),
+    url(images/lava.jpg) center/cover no-repeat;
+}
+
+.header {
+  background-color: #000000c5;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px;
+}
+
+.logo {
+  font-weight: bolder;
+  font-size: 28px;
+  color: white;
+  transition: 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.5);
+}
+
+.link-container {
+  display: flex;
+}
+
+.link {
+  padding: 10px;
+  list-style-type: none;
+  transition: all 0.3s;
+}
+
+.link a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  padding: 10px;
+  transition: all 0.3s;
+}
+
+.link a:hover {
+  font-size: 18px;
+}
+
+.hamburger-lines {
+  display: none;
+  width: 20px;
+  height: 30px;
+  position: fixed;
+  cursor: pointer;
+  right: 40px;
+  top: 20px;
+}
+
+.line {
+  background-color: chocolate;
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  transition-duration: 500ms;
+}
+
+.line1 {
+  top: 0;
+  left: 0;
+}
+
+.line2 {
+  top: 10px;
+  left: 0;
+  opacity: 1;
+}
+
+.line3 {
+  bottom: 7px;
+  left: 0;
+}
+
+.hamburger-lines.open .line1 {
+  transform: rotate(45deg);
+  top: 13px;
+}
+
+.hamburger-lines.open .line2 {
+  opacity: 0;
+}
+
+.hamburger-lines.open .line3 {
+  transform: rotate(-45deg);
+  top: 13px;
+}
+
+@media (max-width: 360px) {
+  .hamburger-lines {
+    display: inline-block;
+  }
+
+  .link-container {
+    display: none;
+  }
+
+  .logo:hover {
+    transform: scale(1.2);
+  }
+
+  .link-container {
+    position: absolute;
+    top: 63px;
+    background-color: rgba(0, 0, 0, 0.842);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: -100vw;
+    transition: 0.6s ease-in-out;
+  }
+
+  .link {
+    margin: 20px;
+  }
+
+  .link a {
+    color: white;
+    font-size: 20px;
+  }
+
+  .hamburger-lines.open + .link-container {
+    left: 0;
+  }
+
+  .logo {
+    margin-right: 200px;
+  }
+}
